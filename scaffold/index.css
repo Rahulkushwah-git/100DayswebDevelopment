@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Grid container */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-areas:
+    "header header header"
+    "sidebar-left main sidebar-right"
+    "footer footer footer";
+  gap: 16px;
+  flex-grow: 1;
+  padding: 16px;
+}
+/* Header */
+.header {
+  grid-area: header;
+  background-color: #4CAF50;
+  color: white;
+  padding: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  
+}
+
+/* Main Content */
+.main-content {
+  grid-area: main;
+  background-color: #f1f1f1;
+  padding: 24px;
+  min-height: 100%;
+  border-radius: 8px;
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+
+.main-content p {
+  font-size: 16px;
+}
+
+/* Sidebars */
+.sidebar-left,
+.sidebar-right {
+  background-color: #e0e0e0;
+  padding: 24px;
+  min-height: 100%;
+  border-radius: 8px;
+}
+
+/* Footer */
+.footer {
+  grid-area: footer;
+  text-align: center;
+  padding: 24px;
+  font-size: 19px;
+  background-color: black;
+  color: white;
+}
+
+/* Content styling */
+.header h1 {
+  margin: 0;
+}
+
+.main-content h2 {
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+
+.main-content p {
+  line-height: 1.6;
+  color: #555;
+}
+
+.main-content img {
+  width: 100%;
+  height: auto;
+  margin-top: 16px;
+}
+
+
+
+.sidebar-left {
+  grid-area: sidebar-left;
+  display: flex;
+  padding: 24px;
+  border-radius: 8px;
+  flex-direction: column;
+  gap: 16px;
+  grid-area: sidebar-left;
+}
+
+.sidebar-right {
+  grid-area: sidebar-right;
+  display: flex;
+  padding: 24px;
+  border-radius: 8px;
+  flex-direction: column;
+  gap: 16px;
+  grid-area: sidebar-right;
+}
+
+.sidebar-left img,
+.sidebar-right img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar-left"
+      "sidebar-right"
+      "footer";
+  }
+}
