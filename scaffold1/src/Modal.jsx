@@ -24,7 +24,7 @@ const Modal = () => {
     <div className={`modal-overlay ${isModalOpen ? 'show-modal' : ''}`}>
       <div className='modal-container' ref={modalRef}>
         <h3>modal content</h3>
-        <button className='close-modal-btn'conClick={closeModal}>
+        <button className='close-modal-btn'onClick={closeModal} >
           <FaTimes />
         </button>
       </div>
